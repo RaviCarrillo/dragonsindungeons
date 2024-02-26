@@ -55,18 +55,18 @@ button3.onclick = fightDragon;
 
 
 function goTown() {
-   
+   update(locations[0]);
 }
 
 function goStore() {
     const button1 = document.querySelector('#button1');
-    button1.innerText = "Buy 10 health (10 gold)";
+    button1.innerText = location["button text"][0];
     button1.onclick = buyHealth;
     const button2 = document.querySelector('#button2');
-    button2.innerText = "Buy weapon (30 gold)";
+    button2.innerText = location["button text"][1];
     button2.onclick = buyWeapon;
     const button3 = document.querySelector('#button3');
-    button3.innerText = "Go to town square";
+    button3.innerText = location["button text"][2];
     button3.onclick = goTown;
     const text = document.querySelector('#text');
     text.innerText = "You enter the store.";
