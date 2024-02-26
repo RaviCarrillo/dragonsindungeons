@@ -59,21 +59,11 @@ function goTown() {
 }
 
 function goStore() {
-    const button1 = document.querySelector('#button1');
-    button1.innerText = location["button text"][0];
-    button1.onclick = buyHealth;
-    const button2 = document.querySelector('#button2');
-    button2.innerText = location["button text"][1];
-    button2.onclick = buyWeapon;
-    const button3 = document.querySelector('#button3');
-    button3.innerText = location["button text"][2];
-    button3.onclick = goTown;
-    const text = document.querySelector('#text');
-    text.innerText = "You enter the store.";
+    update(locations[1]);
 }
 
 function goCave() {
-    console.log("Going to cave.");
+    update(locations[2]);
 }
 
 function fightDragon() {
@@ -89,18 +79,18 @@ function buyWeapon() {
 }
 
 function update(location) {
+    button1.innerText = location["button text"][0];
+    button2.innerText = location["button text"][1];
+    button3.innerText = location["button text"][2];
+    
+    button1.onclick = location["button functions"][0];
+    button2.onclick = location["button functions"][1];
+    button3.onclick = location["button functions"][2];
+
     const button1 = document.querySelector('#button1');
-    button1.innerText = "Go to store";
-    button1.onclick = goStore;
     const button2 = document.querySelector('#button2');
-    button2.innerText = "Go to cave";
-    button2.onclick = goCave;
     const button3 = document.querySelector('#button3');
-    button3.innerText = "Fight dragon";
-    button3.onclick = fightDragon;
+    
     const text = document.querySelector('#text');
-    text.innerText = "You are in the town square. You see a sign that says \"Store\".";
-
-
-
+    text.innerText = location[text];
 }
