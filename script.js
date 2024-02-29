@@ -132,6 +132,7 @@ function goCave() {
 
 function goFight() {
     update(locations[3]);
+    monsterStats.style.display = 'block;'
     monsterHealth = monsters[fighting].health;
     monsterStats.style.display = "block";
     monsterName.innerText = monsters[fighting].name;
